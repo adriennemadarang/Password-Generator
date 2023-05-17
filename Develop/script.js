@@ -27,13 +27,14 @@ function generatePassword() {
   var passwordLength = window.prompt("How many characters would you like your password to contain?");
   var minLength = passwordLength < 8;
   var maxLength = passwordLength > 128;
-  var noString = passwordLength !== String;
+  // var noString = passwordLength !== String;
+
   // If User presses cancel, returns to main page
   if (!passwordLength) {
     return;
   }
 
-  if (minLength || maxLength || !noString) {
+  if (minLength || maxLength) {
     window.alert("Password must be 8-128 characters long");
     return "Please try again.";
   }
@@ -64,7 +65,7 @@ function generatePassword() {
 
     // input should be validated and at least one character type should be selected
     if (!upperCaseChoice && !lowerCaseChoice && !numericChoice && !specialCharChoice) {
-      window.alert("Password must include one")
+      window.alert("Password must include at least one criteria")
     }
 
     for (var i = 0; i < passwordLength; i++) {
