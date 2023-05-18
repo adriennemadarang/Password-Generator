@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// var passwordArray = "";
+
 var upperCase = "QWERTYUIOPLKJHGFDSAZXCVBNM".split("");
 var lowerCase = "qwertyuioplkjhgfdsazxcvbnm".split("");
 var numeric = "1234567890".split("");
@@ -18,28 +18,32 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// GENERATE PASSWORD SECTION
+// function to generate password
 function generatePassword() {
   var password = "";
-  var passwordArray = [];
-  // password variable to push and create string
 
+  // password variable to push and create string
+  var passwordArray = [];
+
+  // prompt for user to select length of password.
   var passwordLength = window.prompt("How many characters would you like your password to contain?");
   var minLength = passwordLength < 8;
   var maxLength = passwordLength > 128;
   // var noString = passwordLength !== String;
 
-  // If User presses cancel, returns to main page
+  // If User presses cancel, returns to main page.
   if (!passwordLength) {
     return;
   }
 
+  // if user selects <8 or >128, returns to main page.
   if (minLength || maxLength) {
     window.alert("Password must be 8-128 characters long");
     return "Please try again.";
   }
   else if (!minLength && !maxLength) {
 
+// prompts to choose uppercase, lowercase, numbers, and special characters
     var upperCaseChoice = window.confirm("Include uppercase?")
     if (upperCaseChoice) {
       passwordArray = passwordArray.concat(upperCase);
@@ -63,11 +67,13 @@ function generatePassword() {
       console.log(specialChar);
     }
 
-    // input should be validated and at least one character type should be selected
+    // if user does not select at least one character type, returns to main page. 
     if (!upperCaseChoice && !lowerCaseChoice && !numericChoice && !specialCharChoice) {
-      window.alert("Password must include at least one criteria")
+      window.alert("Password must include at least one criteria");
+      return "Please try again. Thank you.";
     }
 
+    //  for loop to randomize chosen criteria
     for (var i = 0; i < passwordLength; i++) {
       password += passwordArray[Math.floor(Math.random() * passwordArray.length)];
 
