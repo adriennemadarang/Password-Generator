@@ -14,6 +14,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 
 ## Screenshots
+![image](https://github.com/adriennemadarang/Password-Generator/assets/128556908/52087c0b-c4fa-46e7-b7d9-3aa281f40cea)
+<img width="1386" alt="Screen Shot 2023-05-17 at 9 46 19 PM" src="https://github.com/adriennemadarang/Password-Generator/assets/128556908/fdc0fca3-78ab-4d32-8129-1d11c9b0767e">
+
 
 
 
